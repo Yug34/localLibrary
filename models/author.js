@@ -1,5 +1,7 @@
 var mongoose = require('mongoose');
 
+const { DateTime } = require("luxon")
+
 var Schema = mongoose.Schema;
 
 var AuthorSchema = new Schema(
@@ -10,6 +12,18 @@ var AuthorSchema = new Schema(
     date_of_death: {type: Date},
   }
 );
+
+AuthorSchema
+    .virtual('birth_formatted')
+    .get(function () {
+        return DateTime.fromJSDate(this.date_of_birth).toLocaleString(DateTime.DATE_MED);
+    });
+
+AuthorSchema
+    .virtual('death_formatted')
+    .get(function () {
+        return DateTime.fromJSDate(this.date_of_death).toLocaleString(DateTime.DATE_MED);
+    });
 
 // Virtual for author's full name
 AuthorSchema
