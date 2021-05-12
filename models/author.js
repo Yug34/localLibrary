@@ -44,7 +44,6 @@ AuthorSchema
 // .get(function () {
 //   return (this.date_of_death.getYear() - this.date_of_birth.getYear()).toString();
 // });
-// AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 
 // Virtual for author's URL
 AuthorSchema

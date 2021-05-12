@@ -185,7 +185,7 @@ exports.book_update_get = function(req, res, next) {
     // Get book, authors and genres for form.
     async.parallel({
         book: function(callback) {
-            Book.findById(req.params.id).populate('author').populate('genre').exec(callback);
+            Book.findById(req.params.id).populate('author').populate('Genre').exec(callback);
         },
         authors: function(callback) {
             Author.find(callback);
